@@ -1,39 +1,53 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+import React from 'react';
+import { Drawer } from 'expo-router/drawer';
+import { DrawerActions, useNavigation } from '@react-navigation/native';
+import { Image, TouchableOpacity } from 'react-native';
+import { HeaderProvider, useHeaderTitle } from '../components/HeaderContext';
+import CustomDrawerContent from '@/components/CustomDrawerContent';
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
+  return (
+    <HeaderProvider>
+      <MainDrawer />
+    </HeaderProvider>
+  );
+}
 
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  if (!loaded) {
-    return null;
-  }
+function MainDrawer() {
+  const { headerTitle } = useHeaderTitle();
+  const navigation = useNavigation();
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Drawer
+      screenOptions={{
+        headerTitle: headerTitle,
+        headerStyle: { backgroundColor: '#0375F3' },
+        headerTitleAlign: 'center',
+        headerTintColor: 'white',
+        headerTitleStyle: { fontSize: 18, fontFamily: 'LexendDeca_400Regular', },
+        headerLeft: () => (
+          <TouchableOpacity
+            onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+            style={{ marginLeft: 15 }}
+          >
+            <Image
+              source={require('../assets/images/menu.png')}
+              style={{ width: 24, height: 24, tintColor: 'white' }}
+            />
+          </TouchableOpacity>
+        ),
+        drawerStyle: {
+          width: 265,
+          backgroundColor: '#f8f9fa',
+        },
+      }}
+      drawerContent={() => <CustomDrawerContent />}
+    >
+      <Drawer.Screen name="(tabs)" options={{ title: 'Lệnh Sản Xuất' }} />
+      <Drawer.Screen name="order" options={{ title: 'Đơn hàng' }} />
+      <Drawer.Screen name="diagram" options={{ title: 'Sơ đồ Gantt' }} />
+      <Drawer.Screen name="command" options={{ title: 'Lệnh Sản Xuất' }} />
+      <Drawer.Screen name="more" options={{ title: 'Xem thêm' }} />
+    </Drawer>
   );
 }
