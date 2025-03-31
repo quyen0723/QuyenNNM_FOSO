@@ -1,54 +1,105 @@
-<<<<<<< HEAD
-# Welcome to your Expo app 👋
+# QuyenNNM_FOSO
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 📱 Giới thiệu
+**QuyenNNM_FOSO** là một ứng dụng di động được phát triển bằng **React Native** và **Expo**. Ứng dụng sử dụng các thư viện hiện đại để cung cấp trải nghiệm người dùng mượt mà và tối ưu.
+Đây là bài test em đã làm rất là chăm chỉ mong anh chị có những giá giá để em học hỏi và sữa chữa những thứ còn thiếu sót ạ.
 
-## Get started
+## 🚀 Công nghệ sử dụng
+Dự án được xây dựng với các công nghệ và thư viện sau:
 
-1. Install dependencies
+### **Core Technologies**
+- **React Native**: 0.76.7
+- **Expo**: ~52.0.41
+- **TypeScript**: ^5.3.3 (nếu sử dụng TypeScript)
+- **Tailwind CSS**: ^3.4.17 (kết hợp với nativewind để tối ưu UI)
 
-   ```bash
-   npm install
-   ```
+### **UI & Navigation**
+- **@expo/vector-icons**: Biểu tượng trong ứng dụng
+- **@expo-google-fonts/lexend-deca**: Font chữ
+- **react-native-paper**: UI component hiện đại
+- **react-native-linear-gradient**: Hiệu ứng gradient
+- **react-native-modal**: Hiển thị modal
+- **@react-navigation/native**: Điều hướng
+- **@react-navigation/bottom-tabs** & **@react-navigation/drawer**: Tab & Drawer Navigation
 
-2. Start the app
+### **Hệ thống & Tiện ích**
+- **expo-constants**: Lấy thông tin hệ thống
+- **expo-font**: Tải và sử dụng font chữ
+- **expo-haptics**: Tạo rung động haptic feedback
+- **expo-linking**: Xử lý deep linking
+- **expo-splash-screen**: Hiển thị màn hình chờ
+- **expo-status-bar**: Tùy chỉnh status bar
+- **expo-web-browser**: Mở trang web bên ngoài
+- **react-native-reanimated**: Hỗ trợ animation mượt mà
+- **react-native-safe-area-context**: Hỗ trợ UI an toàn với notch và tai thỏ
 
-   ```bash
-    npx expo start
-   ```
+## 📦 Cài đặt và chạy ứng dụng
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+### 1️⃣ Clone repository
+```sh
+git clone https://github.com/quyen0723/QuyenNNM_FOSO.git
+cd QuyenNNM_FOSO
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2️⃣ Cài đặt dependencies
+```sh
+npm install
+```
+Hoặc nếu sử dụng **yarn**:
+```sh
+yarn install
+```
 
-## Learn more
+### 3️⃣ Chạy ứng dụng trên thiết bị hoặc giả lập
+```sh
+expo start
+```
+Bạn có thể chọn:
+- `a` để chạy trên Android Emulator / thiết bị thật
+- `i` để chạy trên iOS Simulator (chỉ MacOS)
+- `w` để chạy trên trình duyệt Web
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🛠️ Build ứng dụng
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Build file APK / IPA
+- **Android:**
+  ```sh
+  expo build:android
+  ```
+- **iOS (Cần tài khoản Apple Developer):**
+  ```sh
+  expo build:ios
+  ```
 
-## Join the community
+### Build với EAS (Expo Application Services)
+```sh
+eas build --platform android
+```
+Hoặc:
+```sh
+eas build --platform ios
+```
 
-Join our community of developers creating universal apps.
+## ✅ Kiểm thử
+Dự án sử dụng **Jest** để viết test:
+```sh
+npm test
+```
+Hoặc:
+```sh
+yarn test
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-=======
-# QuyenNNM_FOSO
->>>>>>> af099b2aaf932fa2d77a1c1e2b00c9bf83d54917
+## 📝 Lộ trình phát triển (Roadmap)
+- [ ] Hoàn thiện UI chính
+- [ ] Tích hợp API
+- [ ] Thêm tính năng nâng cao
+
+## 👤 Thông tin liên hệ
+- **Tên:** Nguyễn Ngọc Mỹ Quyên
+- **Email:** quyennnm.word@gmail.com
+- **GitHub:** [quyen0723](https://github.com/quyen0723)
+
+---
+Chúc bạn code vui vẻ! 🚀
+
